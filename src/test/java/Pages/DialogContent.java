@@ -60,13 +60,16 @@ public class DialogContent {
     @FindBy(css = "select[id='input-zone']>option")
     public List<WebElement> country_list;
 
+    @FindBy(css = "input[class='btn btn-primary']")
+    public WebElement continue_address;
+
 
 
 
     public static void wait_list() {
         WebDriverWait wait = new WebDriverWait(ErsteDriver.getDriver(), 10);
-        ///wait.until(ExpectedConditions.numberOfElementsToBeLessThan((By) element,108));
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("input-zone")));
+        wait.until(ExpectedConditions.numberOfElementsToBeLessThan((By.cssSelector("select[id='input-zone']>option")),108));
+        /// wait.until(ExpectedConditions.presenceOfElementLocated(By.id("input-zone")));
     }
 
 

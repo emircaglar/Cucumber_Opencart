@@ -33,7 +33,7 @@ public class Address_Steps {
         Parent.select(dd.input_country);
         DialogContent.wait_list();
         Parent.select(dd.input_zone);
-
+        dd.continue_address.click();
     }
 
     @Then("^New address should been create successfully$")
