@@ -11,7 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class DialogContent {
+public class DialogContent extends Parent { // wir haben extend gemacht, weil wir in der Project ,
+    // die Fonktion brauchen, die in Parent
 
 
     public DialogContent() {
@@ -63,15 +64,49 @@ public class DialogContent {
     @FindBy(css = "input[class='btn btn-primary']")
     public WebElement continue_address;
 
+    WebElement meinElement;
 
+    public void findElementAndSendKeysFunction(String elementName, String value) {
+
+        switch (elementName) { // wir mussen scroll und clear und send und wait methoden benutzen
+            // deswegen benuten wir hier switc und eine nutzliche Funktion
+            case "input_username":
+                meinElement = input_username;
+                break;
+            case "input_password":
+                meinElement = input_password;
+                break;
+
+        }
+        SendKeysFunction(meinElement, value);
+
+    }
+
+    public void findElementAndClickFunction(String elementName) {
+
+        switch (elementName) { // wir mussen scroll und click und wait methoden benutzen
+            // deswegen benuten wir hier switc und eine nutzliche Funktion
+            case "login_button":
+                meinElement = login_button;
+                break;
+            case "cookies_button":
+                meinElement = cookies_button;
+                break;
+            case "cookies_button_weiter":
+                meinElement = cookies_button_weiter;
+                break;
+
+        }
+
+        ClickFunction(meinElement);
+    }
 
 
     public static void wait_list() {
         WebDriverWait wait = new WebDriverWait(ErsteDriver.getDriver(), 10);
-        wait.until(ExpectedConditions.numberOfElementsToBeLessThan((By.cssSelector("select[id='input-zone']>option")),108));
+        wait.until(ExpectedConditions.numberOfElementsToBeLessThan((By.cssSelector("select[id='input-zone']>option")), 108));
         /// wait.until(ExpectedConditions.presenceOfElementLocated(By.id("input-zone")));
     }
-
 
 
 }

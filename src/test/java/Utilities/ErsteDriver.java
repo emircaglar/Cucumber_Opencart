@@ -19,4 +19,20 @@ public class ErsteDriver {
     }
 
 
+    public static void DriverQuit() {
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
+
+    }
+
+
 }

@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class LoginSteps {
+public class _01_LoginSteps {
 
     DialogContent d = new DialogContent();
 
@@ -29,13 +29,25 @@ public class LoginSteps {
     @When("^Enter username and password and click login button$")
     public void enter_username_and_password_and_click_login_button() {
         //asd@gmail.com  123qweasd
-        d.input_username.sendKeys("asd@gmail.com");
-        d.input_password.sendKeys("123qweasd");
-        d.login_button.click();
+        //d.input_username.sendKeys("asd@gmail.com");
+        //d.input_password.sendKeys("123qweasd");
+        //d.login_button.click();
+       //WebDriverWait wait = new WebDriverWait(ErsteDriver.getDriver(), 10);
+       //wait.until(ExpectedConditions.urlContains("login"));
+       //d.cookies_button.click();
+       //d.cookies_button_weiter.click();
+
+        d.findElementAndSendKeysFunction("input_username","asd@gmail.com");
+        d.findElementAndSendKeysFunction("input_password","123qweasd");
+        d.findElementAndClickFunction("login_button");
         WebDriverWait wait = new WebDriverWait(ErsteDriver.getDriver(), 10);
         wait.until(ExpectedConditions.urlContains("login"));
-        d.cookies_button.click();
-        d.cookies_button_weiter.click();
+        d.findElementAndClickFunction("cookies_button");
+        d.findElementAndClickFunction("cookies_button_weiter");
+
+
+
+
 
     }
 

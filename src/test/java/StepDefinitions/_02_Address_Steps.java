@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class Address_Steps {
+public class _02_Address_Steps {
 
     LeftContent l = new LeftContent();
     DialogContent dd=new DialogContent();
