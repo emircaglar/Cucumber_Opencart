@@ -76,6 +76,21 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
             case "input_password":
                 meinElement = input_password;
                 break;
+            case "first_name":
+                meinElement = first_name;
+                break;
+            case "last_name":
+                meinElement = last_name;
+                break;
+            case "address_1":
+                meinElement = address_1;
+                break;
+            case "input_city":
+                meinElement = input_city;
+                break;
+            case "input_postcode":
+                meinElement = input_postcode;
+                break;
 
         }
         SendKeysFunction(meinElement, value);
@@ -95,10 +110,29 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
             case "cookies_button_weiter":
                 meinElement = cookies_button_weiter;
                 break;
+            case "continue_address":
+                meinElement = continue_address;
+                break;
 
         }
 
         ClickFunction(meinElement);
+    }
+
+    public void findElementAndSelectFunction(String elementName) {
+
+        switch (elementName) { // wir mussen scroll und click und wait methoden benutzen
+            // deswegen benuten wir hier switc und eine nutzliche Funktion
+            case "input_country":
+                meinElement = input_country;
+                break;
+            case "input_zone":
+                meinElement = input_zone;
+                break;
+
+        }
+
+        SelectFunction(meinElement);
     }
 
 

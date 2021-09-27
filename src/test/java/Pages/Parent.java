@@ -48,7 +48,7 @@ public class Parent {
     }
 
 
-    public static void select(WebElement element) {
+    public void SelectFunction(WebElement element) {
         Select select = new Select(element);
         select.selectByIndex(Parent.getRandom(select.getOptions().size()));
     }
