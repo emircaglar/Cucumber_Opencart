@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.util.List;
+
 public class Parent {
 
     public void SendKeysFunction(WebElement element, String value) {
@@ -22,6 +24,13 @@ public class Parent {
     }
 
     public void ClickFunction(WebElement element) {
+        waitUntillClickable(element);
+        scrollToElement(element);
+        element.click();
+    }
+
+    public void DeleteFunction( List<WebElement> meineAddressList) {
+        WebElement element=meineAddressList.get(meineAddressList.size()-1);
         waitUntillClickable(element);
         scrollToElement(element);
         element.click();
