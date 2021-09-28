@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class Parent {
 
@@ -53,8 +54,25 @@ public class Parent {
         select.selectByIndex(Parent.getRandom(select.getOptions().size()));
     }
 
+    public void  AssertFunction(WebElement element) {
+
+        Assert.assertTrue(element.getText().contains("successfully"));
+        System.out.println("element.getText() = " + element.getText());
+    }
+
     public static int getRandom(int max) {
 
         return (int) (Math.random() * max) + 1;
+    }
+
+    public static void schlafen(int max) {
+
+
+        try {
+            Thread.sleep(max*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 }

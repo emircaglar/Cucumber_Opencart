@@ -40,8 +40,7 @@ public class _01_LoginSteps {
         d.findElementAndSendKeysFunction("input_username","asd@gmail.com");
         d.findElementAndSendKeysFunction("input_password","123qweasd");
         d.findElementAndClickFunction("login_button");
-        WebDriverWait wait = new WebDriverWait(ErsteDriver.getDriver(), 10);
-        wait.until(ExpectedConditions.urlContains("login"));
+        d.current("login");
         d.findElementAndClickFunction("cookies_button");
         d.findElementAndClickFunction("cookies_button_weiter");
 

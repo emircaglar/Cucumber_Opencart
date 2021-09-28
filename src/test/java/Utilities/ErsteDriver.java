@@ -1,5 +1,6 @@
 package Utilities;
 
+import Pages.Parent;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,15 +22,10 @@ public class ErsteDriver {
 
     public static void DriverQuit() {
 
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
+        Parent.schlafen(2);
         if (driver != null) {
-            driver.quit();
-            driver = null;
+           driver.quit();
+           driver = null;
         }
 
     }

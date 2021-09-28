@@ -64,6 +64,9 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
     @FindBy(css = "input[class='btn btn-primary']")
     public WebElement continue_address;
 
+    @FindBy(css = "div[class='alert alert-success alert-dismissible']")
+    public WebElement succesfull_input_assert;
+
     WebElement meinElement;
 
     public void findElementAndSendKeysFunction(String elementName, String value) {
@@ -135,12 +138,26 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
         SelectFunction(meinElement);
     }
 
+    public void findElementAndAssertFunction(String elementName) {
 
-    public static void wait_list() {
+        switch (elementName) { // wir mussen scroll und click und wait methoden benutzen
+            // deswegen benuten wir hier switc und eine nutzliche Funktion
+            case "succesfull_input_assert":
+                meinElement = succesfull_input_assert;
+                break;
+
+        }
+
+        AssertFunction(meinElement);
+    }
+    public  void wait_list() {
         WebDriverWait wait = new WebDriverWait(ErsteDriver.getDriver(), 10);
         wait.until(ExpectedConditions.numberOfElementsToBeLessThan((By.cssSelector("select[id='input-zone']>option")), 108));
         /// wait.until(ExpectedConditions.presenceOfElementLocated(By.id("input-zone")));
     }
-
+    public void current(String value) {
+        WebDriverWait wait = new WebDriverWait(ErsteDriver.getDriver(), 10);
+        wait.until(ExpectedConditions.urlContains(value));
+    }
 
 }
