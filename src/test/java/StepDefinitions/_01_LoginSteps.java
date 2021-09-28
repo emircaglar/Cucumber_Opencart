@@ -16,7 +16,7 @@ public class _01_LoginSteps {
     DialogContent d = new DialogContent();
 
 
-    @Given("^Navigat to Opencart$")
+    @Given("^Naviget to Opencart$")
     public void navigat_to_Opencart() {
 
         WebDriver driver = ErsteDriver.getDriver();

@@ -5,11 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LeftContent extends Parent {
+public class LeftNav extends Parent {
 
-    public LeftContent(){
-
-
+    public LeftNav(){
         PageFactory.initElements(ErsteDriver.getDriver(),this);
     }
 

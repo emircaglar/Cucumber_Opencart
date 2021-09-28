@@ -25,7 +25,7 @@ public class ErsteDriver {
         Parent.schlafen(2);
         if (driver != null) {
            driver.quit();
-           driver = null;
+          driver = null;
         }
 
     }
