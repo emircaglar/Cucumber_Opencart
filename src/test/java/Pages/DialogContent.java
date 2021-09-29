@@ -70,6 +70,15 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
     @FindBy(css = "td[class='text-right']>:nth-child(2)")
     public List<WebElement> delete_Address;
 
+    @FindBy(css = "input[name='search']")
+    public WebElement input_search;
+
+    @FindBy(css = "button[class='btn btn-default btn-lg']")
+    public WebElement button_search;
+
+    @FindBy(xpath = "//i[@class='fa fa-heart']")
+    public List<WebElement> liste_sache;
+
     WebElement meinElement;
 
     public void findElementAndSendKeysFunction(String elementName, String value) {
@@ -93,6 +102,9 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
                 break;
             case "input_city":
                 meinElement = input_city;
+                break;
+            case "input_search":
+                meinElement = input_search;
                 break;
             case "input_postcode":
                 meinElement = input_postcode;
@@ -119,6 +131,10 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
             case "continue_address":
                 meinElement = continue_address;
                 break;
+            case "button_search":
+                meinElement = button_search;
+                break;
+
 
         }
 
@@ -142,13 +158,12 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
     }
 
 
-
     public void findElementAndAssertFunction(String elementName) {
 
         switch (elementName) { // wir mussen scroll und click und wait methoden benutzen
             // deswegen benuten wir hier switc und eine nutzliche Funktion
             case "succesfull_input_assert":
-                meinElement  = succesfull_input_assert;
+                meinElement = succesfull_input_assert;
                 break;
 
         }
@@ -158,6 +173,7 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
 
 
     List<WebElement> meineAddressList;
+
     public void findElementAndDeleteFunction(String elementName) {
 
         switch (elementName) { // wir mussen scroll und click und wait methoden benutzen
@@ -170,14 +186,26 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
         DeleteFunction(meineAddressList);
 
     }
+    public void findElementAndInListSelectFunction(String elementName) {
 
+        switch (elementName) { // wir mussen scroll und click und wait methoden benutzen
+            // deswegen benuten wir hier switc und eine nutzliche Funktion
+            case "liste_sache":
+                meineAddressList = liste_sache;
+                break;
 
+        }
+        InListSelectFunction(meineAddressList);
 
-    public  void wait_list() {
-        WebDriverWait wait = new WebDriverWait(ErsteDriver.getDriver(), 10);
-       wait.until(ExpectedConditions.numberOfElementsToBeLessThan((By.cssSelector("select[id='input-zone']>option")), 108));
-       //wait.until(ExpectedConditions.presenceOfElementLocated(By.id("input-zone")));
     }
+
+
+    public void wait_list() {
+        WebDriverWait wait = new WebDriverWait(ErsteDriver.getDriver(), 10);
+        wait.until(ExpectedConditions.numberOfElementsToBeLessThan((By.cssSelector("select[id='input-zone']>option")), 108));
+        //wait.until(ExpectedConditions.presenceOfElementLocated(By.id("input-zone")));
+    }
+
     public void current(String value) {
         WebDriverWait wait = new WebDriverWait(ErsteDriver.getDriver(), 10);
         wait.until(ExpectedConditions.urlContains(value));

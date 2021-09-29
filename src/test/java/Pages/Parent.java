@@ -36,6 +36,14 @@ public class Parent {
         element.click();
     }
 
+    public void InListSelectFunction( List<WebElement> meineAddressList) {
+            WebElement element=meineAddressList.get(getRandom(meineAddressList.size()));
+            waitUntillClickable(element);
+            scrollToElement(element);
+            element.click();
+
+    }
+
 
     public void waitUntillVisible(WebElement element) {
 
