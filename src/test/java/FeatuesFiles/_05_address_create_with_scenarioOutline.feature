@@ -9,6 +9,7 @@ Feature: Scenario Out with create
 
       When Navigate to Address
       Then Create a address  name as"<Name>" surname as"<Surname>" address as"<Address>"
+      Then Delete a address
       Examples:
         | Name |Surname|Address|
         | erkan |erkanoglu|erkanoglu cd 2|
