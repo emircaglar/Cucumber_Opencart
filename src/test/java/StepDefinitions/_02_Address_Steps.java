@@ -40,14 +40,14 @@ public class _02_Address_Steps {
         dd.wait_list();
         dd.findElementAndSelectFunction("input_zone");
         dd.findElementAndClickFunction("continue_address");
-
+        dd.current("address");
     }
 
 
 
-    @Then("^New address should been create successfully$")
-    public void new_address_should_been_create_successfully() {
-        dd.current("address");
+    @Then("^should been create successfully$")
+    public void should_been_create_successfully() {
+
         dd.findElementAndAssertFunction("succesfull_input_assert");
     }
 

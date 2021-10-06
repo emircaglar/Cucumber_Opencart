@@ -9,9 +9,7 @@ Feature: Edit account
 
       When Naviget to EditAcoount
       When Edit account name as"<name>" surname as "<surname>" phone as "<phone>"
-
-
-
+      When should been create successfully
       Examples:
         | name |surname|phone|
-        | mehmet |ekici|1234567890|
+        | mehmet zeki|ucok|1234567890|

@@ -20,5 +20,7 @@ public class _08_Edit_Acoount {
         dd.findElementAndSendKeysFunction("account_last_name",surname);
         dd.findElementAndSendKeysFunction("account_phone",phone);
         dd.findElementAndClickFunction("account_continue");
+        dd.current("account");
     }
+
 }
