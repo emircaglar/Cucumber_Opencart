@@ -37,7 +37,7 @@ public class Parent {
     }
 
     public void InListSelectFunction( List<WebElement> meineAddressList) {
-            WebElement element=meineAddressList.get(getRandom(meineAddressList.size()));
+            WebElement element=meineAddressList.get(getRandom(meineAddressList.size()-1));
             waitUntillClickable(element);
             scrollToElement(element);
             element.click();
@@ -74,6 +74,11 @@ public class Parent {
     public void  AssertFunction(WebElement element) {
 
         Assert.assertTrue(element.getText().contains("successfully"));
+        System.out.println("element.getText() = " + element.getText());
+    }
+  public void  Assert_empty_Function(WebElement element) {
+
+        Assert.assertTrue(element.getText().contains("Your shopping cart is empty!"));
         System.out.println("element.getText() = " + element.getText());
     }
 

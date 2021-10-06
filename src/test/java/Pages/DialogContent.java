@@ -79,6 +79,9 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
     @FindBy(xpath = "//i[@class='fa fa-heart']")
     public List<WebElement> liste_sache;
 
+    @FindBy(css = "div[class='col-sm-12']>:nth-child(7)")
+    public WebElement search_empty;
+
     WebElement meinElement;
 
     public void findElementAndSendKeysFunction(String elementName, String value) {
@@ -166,9 +169,25 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
                 meinElement = succesfull_input_assert;
                 break;
 
-        }
+                case "search_empty":
+                meinElement = search_empty;
+                break;
 
+        }
         AssertFunction(meinElement);
+    }
+
+    public void findElementAndAssert_empty_Function(String elementName) {
+
+        switch (elementName) { // wir mussen scroll und click und wait methoden benutzen
+            // deswegen benuten wir hier switc und eine nutzliche Funktion
+
+                case "search_empty":
+                meinElement = search_empty;
+                break;
+
+        }
+        Assert_empty_Function(meinElement);
     }
 
 
