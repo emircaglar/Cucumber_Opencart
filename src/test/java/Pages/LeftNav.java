@@ -14,6 +14,9 @@ public class LeftNav extends Parent {
     @FindBy(xpath = "//a[text()='Address Book']")
     public WebElement adress_book;
 
+    @FindBy(xpath = "//a[text()='Edit Account']")
+    public WebElement edit_account;
+
     @FindBy(xpath = "//a[@class='btn btn-primary']")
     public WebElement new_adress;
 
@@ -39,6 +42,10 @@ public class LeftNav extends Parent {
                 break;
             case "new_adress":
                 meinElement = new_adress;
+                break;
+
+                case "edit_account":
+                meinElement = edit_account;
                 break;
 
         }

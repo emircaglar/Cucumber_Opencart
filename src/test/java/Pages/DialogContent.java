@@ -82,6 +82,18 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
     @FindBy(css = "div[class='col-sm-12']>:nth-child(7)")
     public WebElement search_empty;
 
+    @FindBy(id = "input-firstname")
+    public WebElement account_first_name;
+
+    @FindBy(id = "input-lastname")
+    public WebElement account_last_name;
+
+    @FindBy(id = "input-telephone")
+    public WebElement account_phone;
+
+    @FindBy(css = "input[value='Continue']")
+    public WebElement account_continue;
+
     WebElement meinElement;
 
     public void findElementAndSendKeysFunction(String elementName, String value) {
@@ -112,6 +124,16 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
             case "input_postcode":
                 meinElement = input_postcode;
                 break;
+            case "account_first_name":
+                meinElement = account_first_name;
+                break;
+            case "account_last_name":
+                meinElement = account_last_name;
+                break;
+
+            case "account_phone":
+                meinElement = account_phone;
+                break;
 
         }
         SendKeysFunction(meinElement, value);
@@ -136,6 +158,9 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
                 break;
             case "button_search":
                 meinElement = button_search;
+                break;
+            case "account_continue":
+                meinElement = account_continue;
                 break;
 
 
@@ -169,7 +194,7 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
                 meinElement = succesfull_input_assert;
                 break;
 
-                case "search_empty":
+            case "search_empty":
                 meinElement = search_empty;
                 break;
 
@@ -182,7 +207,7 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
         switch (elementName) { // wir mussen scroll und click und wait methoden benutzen
             // deswegen benuten wir hier switc und eine nutzliche Funktion
 
-                case "search_empty":
+            case "search_empty":
                 meinElement = search_empty;
                 break;
 
@@ -205,6 +230,7 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
         DeleteFunction(meineAddressList);
 
     }
+
     public void findElementAndInListSelectFunction(String elementName) {
 
         switch (elementName) { // wir mussen scroll und click und wait methoden benutzen

@@ -5,7 +5,6 @@ Feature: Search is empty
 
 
     Scenario Outline:
-
       When Search a product as "<name>"
       Then Search musst been empty
 
