@@ -5,7 +5,7 @@ import Pages.LeftNav;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.When;
 
-public class _08_Edit_Acoount {
+public class _08_Edit_Acoount_Steps {
 
     LeftNav l=new LeftNav();
     DialogContent dd=new DialogContent();

@@ -6,7 +6,7 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class _05_Select_a_product {
+public class _05_Select_a_product_Steps {
     DialogContent dd=new DialogContent();
     TopNav1 t=new TopNav1();
 

@@ -6,7 +6,6 @@ Feature: Edit account
     Then User should login successfully
 
     Scenario Outline:
-
       When Naviget to EditAcoount
       When Edit account name as"<name>" surname as "<surname>" phone as "<phone>"
       When should been create successfully

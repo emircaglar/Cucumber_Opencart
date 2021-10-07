@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class _01_LoginSteps {
+public class _01_Login_Steps {
 
     DialogContent d = new DialogContent();
 

@@ -3,7 +3,7 @@ package StepDefinitions;
 import Pages.DialogContent;
 import cucumber.api.java.en.Then;
 
-public class _07_Search_empty {
+public class _07_Search_empty_Steps {
     DialogContent dd=new DialogContent();
 
     @Then("^Search musst been empty$")

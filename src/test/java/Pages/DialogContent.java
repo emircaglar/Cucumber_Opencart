@@ -247,7 +247,7 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
 
     public void wait_list() {
         WebDriverWait wait = new WebDriverWait(ErsteDriver.getDriver(), 10);
-        wait.until(ExpectedConditions.numberOfElementsToBeLessThan((By.cssSelector("select[id='input-zone']>option")), 108));
+        wait.until(ExpectedConditions.numberOfElementsToBeLessThan((By.cssSelector("select[id='input-zone']>option")), 107));
         //wait.until(ExpectedConditions.presenceOfElementLocated(By.id("input-zone")));
     }
 
