@@ -5,23 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LeftNav extends Parent {
+public class UpNav extends Parent {
 
-    public LeftNav() {
+    public UpNav() {
         PageFactory.initElements(ErsteDriver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//a[text()='Address Book']")
-    public WebElement adress_book;
-
-    @FindBy(xpath = "//a[text()='Edit Account']")
-    public WebElement edit_account;
-
-    @FindBy(xpath = "//a[text()='Wish List']")
+    @FindBy(css = "a[id='wishlist-total']")
     public WebElement wish_list;
-
-    @FindBy(xpath = "//a[@class='btn btn-primary']")
-    public WebElement new_adress;
 
     WebElement meinElement;
 
@@ -38,20 +29,10 @@ public class LeftNav extends Parent {
 
     public void findElementAndClickFunction(String elementName) {
 
-        switch (elementName) { // wir mussen scroll und click und wait methoden benutzen
-            // deswegen benuten wir hier switc und eine nutzliche Funktion
-            case "adress_book":
-                meinElement = adress_book;
-                break;
-            case "new_adress":
-                meinElement = new_adress;
-                break;
+        switch (elementName) {
+
             case "wish_list":
                 meinElement = wish_list;
-                break;
-
-            case "edit_account":
-                meinElement = edit_account;
                 break;
 
         }

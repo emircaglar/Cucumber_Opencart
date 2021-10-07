@@ -53,7 +53,7 @@ public class _01_Login_Steps {
     @Then("^User should login successfully$")
     public void user_should_login_successfully() {
         WebDriverWait wait = new WebDriverWait(ErsteDriver.getDriver(), 10);
-        wait.until(ExpectedConditions.urlContains("account"));
+         wait.until(ExpectedConditions.urlContains("account"));
         Assert.assertEquals("My Account", d.my_account.getText());
     }
 

@@ -79,6 +79,15 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
     @FindBy(xpath = "//i[@class='fa fa-heart']")
     public List<WebElement> liste_sache;
 
+    @FindBy(css = "button[data-original-title='Add to Wish List']")
+    public List<WebElement> wish_liste_sache;
+
+    @FindBy(xpath = "a[class='btn btn-danger']")
+    public List<WebElement> wish_delete_list;
+
+    @FindBy(css = "table[class='table table-bordered table-hover']>tbody>tr>:nth-child(2)")
+    public List<WebElement> wish_name_list;
+
     @FindBy(css = "div[class='col-sm-12']>:nth-child(7)")
     public WebElement search_empty;
 
@@ -93,6 +102,9 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
 
     @FindBy(css = "input[value='Continue']")
     public WebElement account_continue;
+
+    @FindBy(css = "div[class='alert alert-success alert-dismissible']")
+    public WebElement success_alert;
 
     WebElement meinElement;
 
@@ -198,6 +210,10 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
                 meinElement = search_empty;
                 break;
 
+                case "success_alert":
+                meinElement = success_alert;
+                break;
+
         }
         AssertFunction(meinElement);
     }
@@ -228,6 +244,32 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
 
         }
         DeleteFunction(meineAddressList);
+
+    }
+
+    public void findElementAndListselecetFunction(String elementName) {
+
+        switch (elementName) { // wir mussen scroll und click und wait methoden benutzen
+            // deswegen benuten wir hier switc und eine nutzliche Funktion
+            case "wish_liste_sache":
+                meineAddressList = wish_liste_sache;
+                break;
+
+        }
+        InListSelectFunction(meineAddressList);
+
+    }
+
+    public void findElementAndDeleteAllFunction(String elementName) {
+
+        switch (elementName) { // wir mussen scroll und click und wait methoden benutzen
+            // deswegen benuten wir hier switc und eine nutzliche Funktion
+            case "wish_delete_list":
+                meineAddressList = wish_delete_list;
+                break;
+
+        }
+        DeleteAllFunction(meineAddressList);
 
     }
 

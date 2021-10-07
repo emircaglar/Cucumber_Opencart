@@ -34,6 +34,13 @@ public class Parent {
         waitUntillClickable(element);
         scrollToElement(element);
         element.click();
+    }public void DeleteAllFunction( List<WebElement> meineAddressList) {
+        for (WebElement element : meineAddressList) {
+            waitUntillClickable(element);
+            scrollToElement(element);
+            element.click();
+        }
+
     }
 
     public void InListSelectFunction( List<WebElement> meineAddressList) {
@@ -73,7 +80,7 @@ public class Parent {
 
     public void  AssertFunction(WebElement element) {
 
-        Assert.assertTrue(element.getText().contains("successfully"));
+        Assert.assertTrue(element.getText().contains("success"));
         System.out.println("element.getText() = " + element.getText());
     }
   public void  Assert_empty_Function(WebElement element) {
