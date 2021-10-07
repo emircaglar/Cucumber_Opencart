@@ -8,6 +8,6 @@ Feature: Wish edit
     Scenario:
       When Search a product as "ipod"
       Then Add wish list
-      Then  User should login successfully
+
       When Naviget to Wish List
       Then Wish list delete all

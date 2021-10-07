@@ -19,11 +19,16 @@ public class _09_Wish_List_Edit {
     @When("^Naviget to Wish List$")
     public void navigetToWishList() {
         u.findElementAndClickFunction("wish_list");
-        dd.current("");
+
     }
 
     @Then("^Add wish list$")
     public void addWishList() {
         dd.findElementAndListselecetFunction("wish_liste_sache");
+    }
+
+    @Then("^User should successfully$")
+    public void userShouldSuccessfully() {
+        dd.findElementAndAssertFunction("success_alert");
     }
 }

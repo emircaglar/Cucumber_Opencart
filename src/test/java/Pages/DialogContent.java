@@ -82,7 +82,7 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
     @FindBy(css = "button[data-original-title='Add to Wish List']")
     public List<WebElement> wish_liste_sache;
 
-    @FindBy(xpath = "a[class='btn btn-danger']")
+    @FindBy(css = "a[class='btn btn-danger']")
     public List<WebElement> wish_delete_list;
 
     @FindBy(css = "table[class='table table-bordered table-hover']>tbody>tr>:nth-child(2)")
