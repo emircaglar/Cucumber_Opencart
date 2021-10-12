@@ -8,5 +8,5 @@ Feature: DataTable Functionality
     And Click on the element in the LeftNav
       | adress_book |
 
-    And Click on the element in the LeftNav
+    And Click on the element in the DialogContent
       | new_adress |
