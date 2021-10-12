@@ -30,7 +30,7 @@ public class _02_Address_Steps {
     @When("^Click address button dann new address create name as \"([^\"]*)\" surname as \"([^\"]*)\" adress as \"([^\"]*)\"$")
     public void click_address_button_dann_new_address_create_name_as_surname_as_adress_as(String name, String surname,  String address) {
         l.findElementAndClickFunction("adress_book");
-        l.findElementAndClickFunction("new_adress");
+        dd.findElementAndClickFunction("new_adress");
         dd.findElementAndSendKeysFunction("first_name", name);
         dd.findElementAndSendKeysFunction("last_name", surname);
         dd.findElementAndSendKeysFunction("address_1", address);

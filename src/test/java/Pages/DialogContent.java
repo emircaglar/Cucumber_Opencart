@@ -106,6 +106,9 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
     @FindBy(css = "div[class='alert alert-success alert-dismissible']")
     public WebElement success_alert;
 
+    @FindBy(xpath = "//a[@class='btn btn-primary']")
+    public WebElement new_adress;
+
     WebElement meinElement;
 
     public void findElementAndSendKeysFunction(String elementName, String value) {
@@ -173,6 +176,10 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
                 break;
             case "account_continue":
                 meinElement = account_continue;
+                break;
+
+                case "new_adress":
+                meinElement = new_adress;
                 break;
 
 

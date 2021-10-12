@@ -13,7 +13,7 @@ public class _04_Address_Scenario_Outline_Steps {
     @When("^Navigate to Address$")
     public void navigate_to_Address()  {
         l.findElementAndClickFunction("adress_book");
-        l.findElementAndClickFunction("new_adress");
+        dd.findElementAndClickFunction("new_adress");
 
 
 

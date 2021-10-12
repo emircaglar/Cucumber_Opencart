@@ -20,8 +20,7 @@ public class LeftNav extends Parent {
     @FindBy(xpath = "//a[text()='Wish List']")
     public WebElement wish_list;
 
-    @FindBy(xpath = "//a[@class='btn btn-primary']")
-    public WebElement new_adress;
+
 
     WebElement meinElement;
 
@@ -42,9 +41,6 @@ public class LeftNav extends Parent {
             // deswegen benuten wir hier switc und eine nutzliche Funktion
             case "adress_book":
                 meinElement = adress_book;
-                break;
-            case "new_adress":
-                meinElement = new_adress;
                 break;
             case "wish_list":
                 meinElement = wish_list;
