@@ -10,3 +10,13 @@ Feature: DataTable Functionality
 
     And Click on the element in the DialogContent
       | new_adress |
+
+    And Click on the element in the LeftNav
+      | edit_account |
+
+    And User sending the keys in the Dialog Content
+       |account_first_name|ahmet hamdi|
+       |account_last_name|topcu|
+
+    And Click on the element in the DialogContent
+      | account_continue |

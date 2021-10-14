@@ -29,7 +29,14 @@ public class _10_DataTable_Steps {
         for (int i = 0; i <elementList.size() ; i++) {
             dd.findElementAndClickFunction(elementList.get(i));
         }
+    }
 
+    @And("^User sending the keys in the Dialog Content$")
+    public void userSendingTheKeysInTheDialogContent(DataTable dataTable) {
+        List<List<String>> elementsList=dataTable.asLists(String.class);
+        for (int i = 0; i <elementsList.size() ; i++) {
+            dd.findElementAndSendKeysFunction(elementsList.get(i).get(0),elementsList.get(i).get(1));
+        }
 
 
 
