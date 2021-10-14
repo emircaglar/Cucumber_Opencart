@@ -109,6 +109,12 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
     @FindBy(xpath = "//a[@class='btn btn-primary']")
     public WebElement new_adress;
 
+    @FindBy(xpath = "(//button[@data-original-title='Add to Wish List']//i)[1]")
+    public WebElement wish_erste_sache;
+
+    @FindBy(xpath = "(//a[@class='btn btn-danger']//i)[1]")
+    public WebElement wish_deleze_erste_sache;
+
     WebElement meinElement;
 
     public void findElementAndSendKeysFunction(String elementName, String value) {
@@ -178,8 +184,15 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
                 meinElement = account_continue;
                 break;
 
-                case "new_adress":
+            case "new_adress":
                 meinElement = new_adress;
+                break;
+            case "wish_erste_sache":
+                meinElement = wish_erste_sache;
+                break;
+
+                case "wish_deleze_erste_sache":
+                meinElement = wish_deleze_erste_sache;
                 break;
 
 
@@ -217,7 +230,7 @@ public class DialogContent extends Parent { // wir haben extend gemacht, weil wi
                 meinElement = search_empty;
                 break;
 
-                case "success_alert":
+            case "success_alert":
                 meinElement = success_alert;
                 break;
 
