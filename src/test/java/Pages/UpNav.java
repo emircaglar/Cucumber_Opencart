@@ -16,16 +16,6 @@ public class UpNav extends Parent {
 
     WebElement meinElement;
 
-    public void findElementAndSendKeysFunction(String elementName, String value) {
-
-        switch (elementName) { // wir mussen scroll und clear und send und wait methoden benutzen
-            // deswegen benuten wir hier switc und eine nutzliche Funktion
-
-
-        }
-        SendKeysFunction(meinElement, value);
-
-    }
 
     public void findElementAndClickFunction(String elementName) {
 
