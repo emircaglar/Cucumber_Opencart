@@ -13,7 +13,7 @@ public class _02_Address_Steps {
     @When("^Click address button dann new address create$")
     public void click_address_button_dann_new_address_create() {
         l.findElementAndClickFunction("adress_book");
-        l.findElementAndClickFunction("new_adress");
+        dd.findElementAndClickFunction("new_adress");
         dd.findElementAndSendKeysFunction("first_name", "engincan");
         dd.findElementAndSendKeysFunction("last_name", "baytarcan");
         dd.findElementAndSendKeysFunction("address_1", "can can  cd 11");
