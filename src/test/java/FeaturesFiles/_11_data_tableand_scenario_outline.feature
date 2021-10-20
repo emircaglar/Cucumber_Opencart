@@ -19,5 +19,4 @@ Feature: Scenario outline and datatable
       | account_continue |
     Examples:
       |Exam name  |Exam surname|
-      |ergin|koknar|
-      |taner  |kisa|
+      |ercument|halici|
