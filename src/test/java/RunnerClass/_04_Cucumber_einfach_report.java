@@ -5,7 +5,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(
 
-        tags = {"@RegresionTest"},
+        tags = {"@RegressionTest"},
         features = {"src/test/java/FeaturesFiles"},
         glue = {"StepDefinitions"},
         plugin = {
@@ -18,7 +18,6 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 
 )
-
 
 
 public class _04_Cucumber_einfach_report extends AbstractTestNGCucumberTests {

@@ -1,6 +1,6 @@
 Feature: Scenario Outline und alle
 
-  @RegresionTest
+  @RegressionTest
   Scenario:
     When Naviget to Opencart
     Then Enter username and password and click login button
