@@ -14,11 +14,6 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
         }
 
-
-
-
 )
-
-
 public class _04_Cucumber_einfach_report extends AbstractTestNGCucumberTests {
 }

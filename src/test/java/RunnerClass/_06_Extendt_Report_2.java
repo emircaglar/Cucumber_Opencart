@@ -6,15 +6,18 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.testng.annotations.AfterClass;
 
 @CucumberOptions(
-        tags = {"@SmokeTest"},
+
+        tags = {"@RegressionTest"},
         features = {"src/test/java/FeaturesFiles"},
         glue = {"StepDefinitions"},
-        plugin = { //basit rapor oluşturan plugin
-                "com.cucumber.listener.ExtentCucumberFormatter:target/ExtentReport/ExtentReportSmoke.html"
+        plugin = {
+                "com.cucumber.listener.ExtentCucumberFormatter:target/ExtentReport/ExtentReportRegression.html"
         }
 )
 
-public class _05_Cucumber_Extend_Report extends AbstractTestNGCucumberTests {
+
+
+public class _06_Extendt_Report_2 extends AbstractTestNGCucumberTests {
 
 
     @AfterClass
