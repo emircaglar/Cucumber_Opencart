@@ -4,28 +4,43 @@ import Pages.Parent;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class ErsteDriver {
 
-    public static WebDriver driver;// Singleton Driver habe ich definiert
+    private static  ThreadLocal<WebDriver> threaddriver=new ThreadLocal<>();//Webdriver1,Webdriver1    // Thread Driver habe ich definiert
+    private static  ThreadLocal<String> threadBrowserName=new ThreadLocal<>();//Chrome,FireFox    //Thread Driver habe ich eigene name gegeben
 
     // einen erforderlichen driver wurde definiert
     public static WebDriver getDriver() {
 
-        if (driver == null) {
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+        if (threaddriver.get() == null) { // gibt es hier eine Driver
+
+            switch (browserName){
+
+                case "chrome":
+                    WebDriverManager.chromedriver().setup();
+                    threaddriver.set(new ChromeDriver());
+
+                case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    threaddriver.set(new FirefoxDriver());
+
+
+            }
+
         }
-        return driver;
+        return threaddriver.get();
     }
 
 
     public static void DriverQuit() {
 
         Parent.schlafen(2);
-        if (driver != null) {
-           driver.quit();
+        if (threaddriver.get()!= null) {
+           WebDriver driver=threaddriver.get();
           driver = null;
+          threaddriver.set(driver);
         }
 
     }
