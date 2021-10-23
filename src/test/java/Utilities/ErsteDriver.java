@@ -9,14 +9,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class ErsteDriver {
 
     private static  ThreadLocal<WebDriver> threaddriver=new ThreadLocal<>();//Webdriver1,Webdriver1    // Thread Driver habe ich definiert
-    private static  ThreadLocal<String> threadBrowserName=new ThreadLocal<>();//Chrome,FireFox    //Thread Driver habe ich eigene name gegeben
+    public static  ThreadLocal<String> threadBrowserName=new ThreadLocal<>();//Chrome,FireFox    //Thread Driver habe ich eigene name gegeben
 
     // einen erforderlichen driver wurde definiert
     public static WebDriver getDriver() {
 
         if (threaddriver.get() == null) { // gibt es hier eine Driver
 
-            switch (browserName){
+            switch (threadBrowserName.get()){
 
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
