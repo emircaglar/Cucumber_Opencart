@@ -21,11 +21,11 @@ public class ErsteDriver {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     threaddriver.set(new ChromeDriver());
-
+                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     threaddriver.set(new FirefoxDriver());
-
+                     break;
 
             }
 

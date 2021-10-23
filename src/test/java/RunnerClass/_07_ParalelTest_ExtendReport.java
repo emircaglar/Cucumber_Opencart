@@ -20,7 +20,7 @@ public class _07_ParalelTest_ExtendReport extends AbstractTestNGCucumberTests {
 
 
     @BeforeClass
-    @Parameters("bowser")
+    @Parameters("browser")
     public void beforClass(String browser){
         ErsteDriver.threadBrowserName.set(browser);
 

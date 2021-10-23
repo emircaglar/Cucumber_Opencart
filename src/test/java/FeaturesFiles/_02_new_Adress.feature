@@ -1,7 +1,7 @@
 Feature: neue adresse erstellen
 
 
-  @SmokeTest
+
     Scenario: New Address create
       Given Naviget to Opencart
       When Enter username and password and click login button
