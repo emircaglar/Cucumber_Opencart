@@ -14,6 +14,11 @@ public class ErsteDriver {
     // einen erforderlichen driver wurde definiert
     public static WebDriver getDriver() {
 
+        if(threadBrowserName.get()==null){
+
+            threadBrowserName.set("chrome");
+        }
+
         if (threaddriver.get() == null) { // gibt es hier eine Driver
 
             switch (threadBrowserName.get()){
@@ -38,6 +43,7 @@ public class ErsteDriver {
 
         Parent.schlafen(2);
         if (threaddriver.get()!= null) {
+            threaddriver.get().quit();
            WebDriver driver=threaddriver.get();
           driver = null;
           threaddriver.set(driver);
