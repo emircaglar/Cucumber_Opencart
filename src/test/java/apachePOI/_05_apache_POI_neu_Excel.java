@@ -1,23 +1,32 @@
 package apachePOI;
 
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class _04_apache_POI_column {
+public class _05_apache_POI_neu_Excel {
     public static void main(String[] args) throws IOException {
 
-        System.out.println("Bitte geben sie ein Zahl");
-        Scanner scanner = new Scanner(System.in);
-        int suchenZahl = scanner.nextInt();
+        XSSFWorkbook xssfWorkbook=new XSSFWorkbook();
+        XSSFSheet xssfSheet = xssfWorkbook.createSheet("Tabelle1");
 
-        String zurückWert = find(suchenZahl);
-        System.out.println("zurückWert = " + zurückWert);
+        Row row = xssfSheet.createRow(0);
+        Cell cell = row.createCell(0);
+        cell.setCellValue("ipod");
+
+        FileOutputStream fileOutputStream=new FileOutputStream("src/test/java/apachePOI/resoucess/neuExcel.xlsx");
+        xssfWorkbook.write(fileOutputStream);
+        xssfWorkbook.close();
+        fileOutputStream.close();
+
+
+
+
     }
 
     public static String find(int suchenZahl) {
