@@ -29,29 +29,4 @@ public class _05_apache_POI_neu_Excel {
 
     }
 
-    public static String find(int suchenZahl) {
-        String zuruckWert = "";
-        Workbook workbook = null;
-
-        String path = "src/test/java/apachePOI/resoucess/ApacheExcel2(1).xlsx";
-
-        try {
-            FileInputStream fileInputStream = new FileInputStream(path);
-            workbook = WorkbookFactory.create(fileInputStream);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        Sheet sheet = workbook.getSheet("testCitizen");
-        int rowCount = sheet.getPhysicalNumberOfRows();
-
-        for (int i = 0; i < rowCount; i++) {
-            Row row = sheet.getRow(i);
-            int cellCount=row.getPhysicalNumberOfCells();
-
-            if(cellCount>suchenZahl)
-                    zuruckWert +=row.getCell(suchenZahl)+" ";
-        }
-        return zuruckWert;
-    }
 }
