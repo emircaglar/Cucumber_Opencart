@@ -30,7 +30,7 @@ public class Hooks {
     public void After(Scenario scenario){
 
 
-        System.out.println("scenario hat angefangen ");
+        System.out.println("scenario ist vorbei ");
         System.out.println("scenario.getId() = " + scenario.getStatus());
         System.out.println("scenario.getName() = " + scenario.isFailed());
 
@@ -46,7 +46,7 @@ public class Hooks {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            ExcelUtility.writeExcel("src/test/java/apachiPOI/resourcess/report_Excel.xlsx", scenario.getName(), ErsteDriver.getDriver().toString(), dateTime.format(formatter), scenario.getStatus());
+            ExcelUtility.writeExcel("src/test/java/apachePOI/resoucess/Excel_Report.xlsx", scenario.getName(), ErsteDriver.getDriver().toString(), dateTime.format(formatter), scenario.getStatus());
 
         }
         ErsteDriver.DriverQuit();
